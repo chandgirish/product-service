@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ProductServiceApplication {
     public static void main(String[] args) {
-//        TWO WAYS FOR SECRET HANDLING
 //        Dotenv dotenv = Dotenv.load();
 //        System.out.println("THE PORT IS : " + dotenv.get("PORT"));
 //        System.setProperty("PORT", dotenv.get("PORT"));
