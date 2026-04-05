@@ -7,11 +7,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ProductServiceApplication {
     public static void main(String[] args) {
-//        Dotenv dotenv = Dotenv.load();
-//        System.out.println("THE PORT IS : " + dotenv.get("PORT"));
-//        System.setProperty("PORT", dotenv.get("PORT"));
+        Dotenv dotenv = Dotenv.configure()
+                .ignoreIfMissing()
+                .load();
 
-        Dotenv.configure().ignoreIfMissing().load(); // loads all .env variables
+        // Set system properties BEFORE SpringApplication.run()
+        System.setProperty("PORT", dotenv.get("PORT"));
+        System.setProperty("DB_URL", dotenv.get("DB_URL"));
+        System.setProperty("DB_USERNAME", dotenv.get("DB_USERNAME"));
+        System.setProperty("DB_PASSWORD", dotenv.get("DB_PASSWORD"));
+
         SpringApplication.run(ProductServiceApplication.class, args);
     }
 }

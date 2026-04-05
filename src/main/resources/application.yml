@@ -1,0 +1,26 @@
+
+spring:
+  application:
+    name: product
+# postgres
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+#JPA
+  jpa:
+    hibernate.ddl-auto: update
+    show-sql: true
+
+server:
+  port: ${PORT}
+
+## for hibernate logs
+# Lower Hibernate logging level
+  logging:
+    level:
+      org:
+        hibernate: warn
+        hibernate.SQL: off
+        hibernate.type.descriptor.sql.BasicBinder: off

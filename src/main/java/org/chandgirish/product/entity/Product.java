@@ -1,11 +1,18 @@
 package org.chandgirish.product.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
+//import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Product {
 
     @Id
